@@ -43,6 +43,7 @@
     font-size: 25px;
     background-color: #69c;
     margin-top: -64px;
+    z-index: 100;
 }
 
 .nav__responsive-button{
@@ -64,16 +65,21 @@
     .nav__responsive-ul{
         display: block;
         position: absolute;
-        background: #9bf;
-        height: 100%;
         width: 100%;
         margin-top: 37px;
         padding-top: 27px;
+        height: 37px;
     }
 
     .nav__li-container{
         position: relative;
-        top:-100%;
+        top: -1000px;
+        height: calc(100vh - 64px);
+        background: #9bf;
+        transition: all 1s;
+        z-index: 1;
+        width: 75%;
+        padding-top: 27px;
     }
     .responsive__nav__li {
         width: 100%;
@@ -93,7 +99,8 @@
         text-decoration: none;
     }
 
-    .nav__responsive-ul:hover {
+    .nav__responsive-ul:hover > .nav__li-container {
+        top: -27px;
 
     }
 }
